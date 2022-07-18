@@ -1,10 +1,12 @@
 import Notiflix from 'notiflix';
 import { galleryMarkup } from '../script/galleryMarkup';
+import { getImage } from './getImage';
 import SimpleLightbox from 'simplelightbox';
 import { ref } from './refs';
 import { PARAMS } from './PARAMS';
 
 let pageCount = 1;
+let searchQuery = '';
 
 export function buttonHandlePhotoLoad() {
   pageCount += 1;

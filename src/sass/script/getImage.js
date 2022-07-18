@@ -1,12 +1,13 @@
 import Notiflix from 'notiflix';
 const axios = require('axios');
 import { PARAMS } from './PARAMS';
+import { ref } from './refs';
 
 let pageCount = 1;
 
 export async function getImage(value) {
   const response = await axios.get(
-    `${PARAMS.BASE_URL}?key=${PARAMS.API_KEY}&q=${value}&${PARAMS.PARAM_LIST}&page=${pageCount}&per_page=40`
+    `${PARAMS.BASE_URL}?key=${PARAMS.API_KEY}&q=${value}&${PARAMS.PARAM_LIST}&page=${pageCount}&per_page=${PARAMS.PER_PAGE}`
   );
   const image = await response.data;
   if (!image.total) {
